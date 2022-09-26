@@ -1,10 +1,9 @@
-from Controllers.menu import menu
+from Controllers.mainMenu import main_menu
 
-# this main function calls the menu function
+
+# this main function calls the main menu function
 def main():
-    menu()
-
-
+    main_menu()
 
 
 # this part calls the main function when this file is run
