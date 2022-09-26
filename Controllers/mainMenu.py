@@ -1,17 +1,16 @@
-from Controllers import customerMenu
-from Controllers import productMenu
-
+from customerMenu import customer_menu
+from productMenu import product_menu
 
 def main_menu_queries():
-    print('***POS CLI***')
-
+    print('***Welcome to POS CLI***')
+    
     # these print statements provides the user with the available options to choose from
-    print('\t1. Customer Operations')
-    print('\t2. Product Operations')
-    print('\t3. Purchase Operations')
-    print('\t0. Quit')
+    print('1. Customer Operations')
+    print('2. Product Operations')
+    print('3. Purchase Operations')
+    print('0. Quit')
 
-
+    
 def main_menu():
     main_menu_queries()
 
@@ -20,9 +19,9 @@ def main_menu():
 
     while True:
         if user_choice == '1':
-            customerMenu.customer_menu()
+            customer_menu()
         elif user_choice == '2':
-            productMenu.product_menu()
+            product_menu()
         elif user_choice == '3':
             pass
         elif user_choice == '0':
