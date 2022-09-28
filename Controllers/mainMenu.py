@@ -1,5 +1,6 @@
 from Controllers.customerMenu import customer_menu
 from Controllers.productMenu import product_menu
+from Controllers.purchase import purchase_product
 
 
 def main_menu_queries():
@@ -24,7 +25,7 @@ def main_menu():
         elif user_choice == '2':
             product_menu()
         elif user_choice == '3':
-            pass
+            purchase_product()
         elif user_choice == '0':
             print('POS CLI Exited!')
             quit()
