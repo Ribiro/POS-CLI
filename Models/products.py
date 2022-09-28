@@ -3,14 +3,15 @@ import os
 
 
 class ProductModel:
-    def __init__(self, id, product_name, quantity):
+    def __init__(self, id, product_name, quantity, price):
         self.id = id
         self.product_name = product_name
         self.quantity = quantity
+        self.price = price
 
     # add new product
     @classmethod
-    def add_product(cls, product_name, quantity):
+    def add_product(cls, product_name, quantity, price):
         from Controllers.productMenu import product_menu
         f = open('Files/products_file.json', 'r')
 
@@ -24,7 +25,8 @@ class ProductModel:
         product = {
             "id": product_id,
             "product_name": product_name,
-            "quantity": quantity
+            "quantity": quantity,
+            "price": price
         }
         products.append(product)
 
@@ -33,6 +35,16 @@ class ProductModel:
 
         print('Product Added Successfully!')
         product_menu()
+
+    # fetch all products
+    @classmethod
+    def fetch_all_products(cls):
+        file = open('Files/products_file.json', 'r')
+        if os.stat('Files/products_file.json').st_size == 0:
+            products = []
+        else:
+            products = json.load(file)
+        return products
 
     # fetch product by id
     @classmethod
@@ -78,7 +90,7 @@ class ProductModel:
 
     # update product by id
     @classmethod
-    def update_product_by_id(self, id, product_name, quantity):
+    def update_product_by_id(self, id, product_name, quantity, price):
         f = open('Files/products_file.json', 'r')
         products = json.load(f)
 
@@ -87,7 +99,8 @@ class ProductModel:
                 product.update({
                     "id": id,
                     "product_name": product_name,
-                    "quantity": quantity
+                    "quantity": quantity,
+                    "price": price
                 })
 
         with open('Files/products_file.json', 'w', encoding='utf-8') as json_file:

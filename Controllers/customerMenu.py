@@ -8,11 +8,13 @@ def customer_menu_queries():
     print('\t1. Add New Customer')
     print('\t2. Delete Customer Details')
     print('\t3. Update Customer Details')
+    print('\t4. Customer Queries')
     print('\t0. Go Back to Main Menu')
 
 
 def customer_menu():
     from Controllers.mainMenu import main_menu
+    from Controllers.customerQueries import customer_queries
     customer_menu_queries()
 
     # take user choice
@@ -55,6 +57,10 @@ def customer_menu():
             else:
                 print("Customer with this ID does not exist!")
                 main_menu()
+
+        # choice 4 performs the customers queries
+        elif user_choice == '4':
+            customer_queries()
 
         # choice 0 takes us back to main menu
         elif user_choice == '0':

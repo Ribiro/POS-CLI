@@ -2,25 +2,15 @@
     {
         "id": 1,
         "product_name": "Omo",
-        "quantity": 2,
-        "customer_id": 3
+        "quantity": 20,
+        "amount_spent": 2000,
+        "customer_id": 1
     },
     {
         "id": 2,
-        "product_name": "Omo",
-        "quantity": 5,
-        "customer_id": 3
-    },
-    {
-        "id": 3,
-        "product_name": "Omo",
-        "quantity": 5,
-        "customer_id": 1
-    },
-    {
-        "id": 4,
-        "product_name": "Omo",
-        "quantity": 10,
-        "customer_id": 1
+        "product_name": "Kiwi",
+        "quantity": 25,
+        "amount_spent": 1250,
+        "customer_id": 2
     }
 ]

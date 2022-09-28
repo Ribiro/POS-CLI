@@ -8,11 +8,13 @@ def product_menu_queries():
     print('1. Add New Product')
     print('2. Delete Product Details')
     print('3. Update Product Details')
+    print('4. Products Queries')
     print('0. Go Back to Main Menu')
 
 
 def product_menu():
     from Controllers.mainMenu import main_menu
+    from Controllers.productQueries import product_queries
     product_menu_queries()
 
     # take user choice
@@ -23,11 +25,12 @@ def product_menu():
         if user_choice == '1':
             product_name = input("\tEnter Name of Product: ")
             quantity = int(input("\tEnter Quantity of Product: "))
+            price = int(input("\tEnter Price of Product per Quantity: "))
             if ProductModel.check_product_exists(product_name):
                 print('Product with this name already exists!')
                 main_menu()
             else:
-                ProductModel.add_product(product_name=product_name, quantity=quantity)
+                ProductModel.add_product(product_name=product_name, quantity=quantity, price=price)
                 print('Product added successfully!')
                 main_menu()
 
@@ -48,12 +51,17 @@ def product_menu():
             if ProductModel.check_id_exists(id):
                 product_name = input("\tEnter New Name of Product: ")
                 quantity = int(input("\tEnter New Quantity of Product: "))
-                ProductModel.update_product_by_id(id=id, product_name=product_name, quantity=quantity)
+                price = int(input("\tEnter New Price of Product per Quantity: "))
+                ProductModel.update_product_by_id(id=id, product_name=product_name, quantity=quantity, price=price)
                 print("Product Details Updated Successfully!")
                 main_menu()
             else:
                 print("Product with this ID does not exist!")
                 main_menu()
+
+        # choice 4 performs the products queries
+        elif user_choice == '4':
+            product_queries()
 
         # choice 0 takes us back to main menu
         elif user_choice == '0':
