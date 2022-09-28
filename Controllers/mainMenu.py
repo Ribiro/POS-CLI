@@ -1,16 +1,17 @@
-from customerMenu import customer_menu
-from productMenu import product_menu
+from Controllers.customerMenu import customer_menu
+from Controllers.productMenu import product_menu
+
 
 def main_menu_queries():
     print('***Welcome to POS CLI***')
-    
+
     # these print statements provides the user with the available options to choose from
     print('1. Customer Operations')
     print('2. Product Operations')
     print('3. Purchase Operations')
     print('0. Quit')
 
-    
+
 def main_menu():
     main_menu_queries()
 

@@ -20,15 +20,35 @@ def customer_menu():
 
     while True:
         if user_choice == '1':
-            id = input("\tEnter Customer ID: ")
             first_name = input("\tEnter Customer First Name: ")
             last_name = input("\tEnter Customer Last Name: ")
             phone_number = input("\tEnter Customer Phone Number: ")
-            CustomerModel.add_customer(id=id, first_name=first_name, last_name=last_name, phone_number=phone_number)
+            if CustomerModel.check_phone_number_exists(phone_number):
+                print('Customer with this phone number already exists!')
+                main_menu()
+            else:
+                CustomerModel.add_customer(first_name=first_name, last_name=last_name, phone_number=phone_number)
         elif user_choice == '2':
-            pass
+            id = int(input("To proceed, enter the ID of the customer to delete: "))
+            if CustomerModel.check_id_exists(id):
+                CustomerModel.delete_customer_by_id(id)
+                print('Customer deleted successfully!')
+                main_menu()
+            else:
+                print('Customer with this ID does not exist!')
+                main_menu()
         elif user_choice == '3':
-            pass
+            id = int(input("To proceed, enter the ID of the customer to update: "))
+            if CustomerModel.check_id_exists(id):
+                first_name = input("\tEnter New Customer First Name: ")
+                last_name = input("\tEnter New Customer Last Name: ")
+                phone_number = input("\tEnter New Customer Phone Number: ")
+                CustomerModel.update_customer_by_id(id=id, first_name=first_name, last_name=last_name, phone_number=phone_number)
+                print("Customer Details Updated Successfully!")
+                main_menu()
+            else:
+                print("Customer with this ID does not exist!")
+                main_menu()
         elif user_choice == '0':
             main_menu()
         else:
