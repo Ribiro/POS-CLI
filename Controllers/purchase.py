@@ -31,7 +31,7 @@ def purchase_product():
             purchases.append(purchase)
 
             # check whether quantity is less than or equal to available product quantity
-            if ProductModel.fetch_product_by_id(product_id).get("id") <= quantity:
+            if ProductModel.fetch_product_by_id(product_id).get("id") >= quantity:
                 # write to purchases file
                 with open('Files/purchases.json', 'w', encoding='utf-8') as json_file:
                     json.dump(purchases, json_file, indent=4, separators=(',', ': '))

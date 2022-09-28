@@ -16,5 +16,11 @@
         "product_name": "Omo",
         "quantity": 5,
         "customer_id": 1
+    },
+    {
+        "id": 4,
+        "product_name": "Omo",
+        "quantity": 10,
+        "customer_id": 1
     }
 ]
