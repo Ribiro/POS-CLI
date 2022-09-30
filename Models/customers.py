@@ -10,7 +10,7 @@ class CustomerModel:
         self.phone_number = phone_number
 
     # add new customer details
-    @classmethod
+    @classmethod  # binds this method to the class, and not the object of the class
     def add_customer(cls, first_name, last_name, phone_number):
         from Controllers.customerMenu import customer_menu
         f = open('Files/customers_file.json', 'r')

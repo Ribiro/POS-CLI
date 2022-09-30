@@ -5,8 +5,9 @@ def queries_options():
     print('***Products Queries***')
 
     # these print statements provides the user with the available options to choose from
-    print('\t1. Search for a product')
-    print('\t2. List all products')
+    print('\t1. Search for a product by ID')
+    print('\t2. Search for a product by name')
+    print('\t3. List all products')
     print('\t0. Go Back to Main Menu')
 
 
@@ -18,7 +19,7 @@ def product_queries():
     user_choice = input('Please enter your choice to proceed: ')
 
     while True:
-        # choice 1 searches for a product (using ID for this case)
+        # choice 1 searches for a product (using ID)
         if user_choice == '1':
             product_id = int(input('Enter product ID for the product you wish to search: '))
 
@@ -31,8 +32,21 @@ def product_queries():
                 print('Cant find product with this search ID!')
                 main_menu()
 
-        # choice 2 lists all the products
+        # choice 2 searches for a product (using name)
         elif user_choice == '2':
+            product_name = input('Enter name of the product you wish to search: ')
+
+            if ProductModel.check_product_exists(product_name):
+                the_product = ProductModel.fetch_product_by_name(product_name)
+
+                print('The result for your search is: ' + str(the_product))
+                main_menu()
+            else:
+                print('Cant find product with this search name!')
+                main_menu()
+
+        # choice 3 lists all the products
+        elif user_choice == '3':
             all_products = ProductModel.fetch_all_products()
             print('Your search result is: ' + str(all_products))
             main_menu()

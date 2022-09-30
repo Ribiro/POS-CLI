@@ -60,6 +60,20 @@ class ProductModel:
                     product = each
         return product
 
+    # fetch product by name
+    @classmethod
+    def fetch_product_by_name(cls, product_name):
+        product = []
+        file = open('Files/products_file.json', 'r')
+        if os.stat('Files/products_file.json').st_size == 0:
+            product = []
+        else:
+            products = json.load(file)
+            for each in products:
+                if each.get("product_name").lower() == product_name.lower():
+                    product = each
+        return product
+
     # check whether product exists
     @classmethod
     def check_product_exists(cls, product_name):
@@ -70,7 +84,7 @@ class ProductModel:
         else:
             products = json.load(file)
             for each in products:
-                if each.get("product_name") == product_name:
+                if each.get("product_name").lower() == product_name.lower():
                     exists_status = True
         return exists_status
 
