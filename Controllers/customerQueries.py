@@ -7,9 +7,9 @@ def queries_options():
     print('***Customers Queries***')
 
     # these print statements provides the user with the available options to choose from
-    print('\t1. Search for a customer')
+    print('\t1. Search for a customer using ID')
     print('\t2. List all customers')
-    print('\t3. Search for customer and their purchase history')
+    print('\t3. Search for customer and their purchase history (using phone number)')
     print('\t0. Go Back to Main Menu')
 
 
@@ -42,10 +42,10 @@ def customer_queries():
 
         # search for a customer and their search history
         elif user_choice == '3':
-            customer_id = int(input('Enter customer ID for the customer you wish to search history: '))
+            phone_number = input('Enter customer phone number for the customer you wish to search history: ')
 
-            if CustomerModel.check_id_exists(customer_id):
-                the_customer = CustomerModel.fetch_customer_by_id(customer_id)
+            if CustomerModel.check_phone_number_exists(phone_number):
+                the_customer = CustomerModel.fetch_customer_by_phone_number(phone_number)
                 print('The result for your search is: ' + str(the_customer))
 
                 # purchase history
@@ -57,7 +57,7 @@ def customer_queries():
                 else:
                     purchases = json.load(f)
                     for history in purchases:
-                        if history.get("customer_id") == customer_id:
+                        if history.get("customer_id") == the_customer.get("customer_id"):
                             purchase_history.append(history)
 
                     if len(purchase_history) == 0:
@@ -67,7 +67,7 @@ def customer_queries():
                         print('Purchase History for this Customer is: ' + str(purchase_history))
                         main_menu()
             else:
-                print('Cant find a customer with this search ID!')
+                print('Cant find a customer with this search phone number!')
                 main_menu()
 
         # choice 0 takes us back to main menu

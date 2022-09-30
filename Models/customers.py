@@ -61,6 +61,20 @@ class CustomerModel:
                     customer = each
         return customer
 
+    # fetch customer using phone number
+    @classmethod
+    def fetch_customer_by_phone_number(cls, phone_number):
+        customer = []
+        file = open('Files/customers_file.json', 'r')
+        if os.stat('Files/customers_file.json').st_size == 0:
+            customer = []
+        else:
+            customers = json.load(file)
+            for each in customers:
+                if each.get("phone_number") == phone_number:
+                    customer = each
+        return customer
+
     # check whether phone number exists
     @classmethod
     def check_phone_number_exists(cls, phone_number):
