@@ -57,7 +57,7 @@ def customer_queries():
                 else:
                     purchases = json.load(f)
                     for history in purchases:
-                        if history.get("customer_id") == the_customer.get("customer_id"):
+                        if history.get("customer_id") == the_customer.get("id"):
                             purchase_history.append(history)
 
                     if len(purchase_history) == 0:
