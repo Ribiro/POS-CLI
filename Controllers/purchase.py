@@ -61,13 +61,29 @@ def purchase_product():
                     print('Cant purchase product! Insufficient quantity')
                     main_menu()
 
-                print('Continue Shopping?')
-                print('Enter 1 to Proceed or 0 to proceed to checkout')
-                continue_shopping = int(input('Enter your choice: '))
+                choice = ''
+                while True:
+                    print('Continue Shopping?')
+                    print('Enter 1 to Proceed or 0 to proceed to checkout')
+                    continue_shopping = input('Enter your choice: ')
 
-                if continue_shopping == 1:
+                    if continue_shopping != "":
+                        if continue_shopping == "1":
+                            choice = continue_shopping
+                            break
+                        elif continue_shopping == "0":
+                            choice = continue_shopping
+                            break
+                        else:
+                            print("Please enter a valid choice")
+                            continue
+                    else:
+                        print("Please enter a choice")
+                        continue
+
+                if choice == '1':
                     continue
-                elif continue_shopping == 0:
+                elif choice == '0':
                     print("Checkout completed! Below is your receipt.")
                     print("POS CLI Receipt")
                     print("***********************")
@@ -79,9 +95,6 @@ def purchase_product():
                     print("Total Amount = " + str(sum(total_amount_spent)))
                     print("************************")
                     main_menu()
-                else:
-                    print('Invalid choice!')
-                    continue
             else:
                 print('Product with this ID does not exist!')
                 main_menu()

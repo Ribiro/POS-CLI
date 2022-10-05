@@ -2,13 +2,13 @@
     {
         "id": 1,
         "product_name": "Omo",
-        "quantity": 3,
+        "quantity": 15,
         "price": 100
     },
     {
         "id": 2,
         "product_name": "Kiwi",
-        "quantity": 1,
+        "quantity": 15,
         "price": 50
     },
     {
