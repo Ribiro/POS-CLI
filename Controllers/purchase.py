@@ -59,7 +59,7 @@ def purchase_product():
                         print('Purchase Successfully Added to Invoice!')
                 else:
                     print('Cant purchase product! Insufficient quantity')
-                    main_menu()
+                    continue
 
                 choice = ''
                 while True:
@@ -87,6 +87,8 @@ def purchase_product():
                     print("Checkout completed! Below is your receipt.")
                     print("POS CLI Receipt")
                     print("***********************")
+                    print('Customer Name: ' + str(CustomerModel.fetch_customer_by_id(customer_id).get('first_name'))
+                          + ' ' + str(CustomerModel.fetch_customer_by_id(customer_id).get('last_name')))
                     print("Product||Quantity||Amount Spent")
                     total_amount_spent = []
                     print(tabulate(invoices))

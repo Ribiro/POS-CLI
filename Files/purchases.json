@@ -313,5 +313,26 @@
         "quantity": 1,
         "amount_spent": 50,
         "customer_id": 1
+    },
+    {
+        "id": 46,
+        "product_name": "Omo",
+        "quantity": 1,
+        "amount_spent": 100,
+        "customer_id": 1
+    },
+    {
+        "id": 47,
+        "product_name": "Omo",
+        "quantity": 1,
+        "amount_spent": 100,
+        "customer_id": 1
+    },
+    {
+        "id": 48,
+        "product_name": "Omo",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 1
     }
 ]
