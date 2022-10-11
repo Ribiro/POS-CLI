@@ -278,5 +278,40 @@
         "quantity": 5,
         "amount_spent": 500,
         "customer_id": 1
+    },
+    {
+        "id": 41,
+        "product_name": "Omo",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 1
+    },
+    {
+        "id": 42,
+        "product_name": "Kiwi",
+        "quantity": 2,
+        "amount_spent": 100,
+        "customer_id": 1
+    },
+    {
+        "id": 43,
+        "product_name": "test",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 1
+    },
+    {
+        "id": 44,
+        "product_name": "Omo",
+        "quantity": 1,
+        "amount_spent": 100,
+        "customer_id": 1
+    },
+    {
+        "id": 45,
+        "product_name": "Kiwi",
+        "quantity": 1,
+        "amount_spent": 50,
+        "customer_id": 1
     }
 ]
