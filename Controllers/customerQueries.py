@@ -28,7 +28,9 @@ def customer_queries():
             if CustomerModel.check_id_exists(customer_id):
                 the_customer = CustomerModel.fetch_customer_by_id(customer_id)
 
-                print('The result for your search is: ' + str(the_customer))
+                print('****Customer****')
+                print('ID:' + str(the_customer.get('id')) + ' | Full Name: ' + str(the_customer.get('first_name')) + ' ' +
+                      str(the_customer.get('last_name')) + ' | Phone Number: ' + str(the_customer.get('phone_number')))
                 main_menu()
             else:
                 print('Cant find a customer with this search ID!')
@@ -37,7 +39,12 @@ def customer_queries():
         # choice 2 lists all the customers
         elif user_choice == '2':
             all_customers = CustomerModel.fetch_all_customers()
-            print('Your search result is: ' + str(all_customers))
+            # print('Your search result is: ' + str(all_customers))
+            print('********Customers*********')
+            for customer in all_customers:
+                print('ID:' + str(customer.get('id')) + ' | Full Name: ' + str(
+                    customer.get('first_name')) + ' ' +
+                      str(customer.get('last_name')) + ' | Phone Number: ' + str(customer.get('phone_number')))
             main_menu()
 
         # search for a customer and their search history
@@ -46,7 +53,7 @@ def customer_queries():
 
             if CustomerModel.check_phone_number_exists(phone_number):
                 the_customer = CustomerModel.fetch_customer_by_phone_number(phone_number)
-                print('The result for your search is: ' + str(the_customer))
+                print('Customer Name: ' + str(the_customer.get('first_name')) + ' ' + str(the_customer.get('last_name')))
 
                 # purchase history
                 purchase_history = []
@@ -64,7 +71,11 @@ def customer_queries():
                         print('Purchase History for this Customer is Empty!')
                         main_menu()
                     else:
-                        print('Purchase History for this Customer is: ' + str(purchase_history))
+                        print('Purchase History')
+                        print('*****************************')
+                        for item in purchase_history:
+                            print('ID: ' + str(item.get('id')) + '||' + 'Product: ' + str(item.get('product_name')) + '||' +
+                                  'Amount Spent: ' + str(item.get('amount_spent')))
                         main_menu()
             else:
                 print('Cant find a customer with this search phone number!')

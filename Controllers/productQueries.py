@@ -26,7 +26,9 @@ def product_queries():
             if ProductModel.check_id_exists(product_id):
                 the_product = ProductModel.fetch_product_by_id(product_id)
 
-                print('The result for your search is: ' + str(the_product))
+                print('****Product****')
+                print('ID:' + str(the_product.get('id')) + ' | Product Name: ' + str(the_product.get('product_name')) +
+                      ' | Quantity: ' + str(the_product.get('quantity')))
                 main_menu()
             else:
                 print('Cant find product with this search ID!')
@@ -39,7 +41,9 @@ def product_queries():
             if ProductModel.check_product_exists(product_name):
                 the_product = ProductModel.fetch_product_by_name(product_name)
 
-                print('The result for your search is: ' + str(the_product))
+                print('****Product****')
+                print('ID:' + str(the_product.get('id')) + ' | Product Name: ' + str(the_product.get('product_name')) +
+                      ' | Quantity: ' + str(the_product.get('quantity')))
                 main_menu()
             else:
                 print('Cant find product with this search name!')
@@ -48,7 +52,10 @@ def product_queries():
         # choice 3 lists all the products
         elif user_choice == '3':
             all_products = ProductModel.fetch_all_products()
-            print('Your search result is: ' + str(all_products))
+            print("********Products*********")
+            for product in all_products:
+                print('ID:' + str(product.get('id')) + ' | Product Name: ' + str(product.get('product_name')) +
+                      ' | Quantity: ' + str(product.get('quantity')))
             main_menu()
 
         # choice 0 takes us back to main menu

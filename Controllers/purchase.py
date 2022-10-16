@@ -85,7 +85,7 @@ def purchase_product():
                     continue
                 elif choice == '0':
                     print("Checkout completed! Below is your receipt.")
-                    print("POS CLI Receipt")
+                    print("***POS CLI Receipt***")
                     print("***********************")
                     print('Customer Name: ' + str(CustomerModel.fetch_customer_by_id(customer_id).get('first_name'))
                           + ' ' + str(CustomerModel.fetch_customer_by_id(customer_id).get('last_name')))
