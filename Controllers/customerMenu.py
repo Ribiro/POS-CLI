@@ -26,11 +26,13 @@ def customer_menu():
             first_name = input("\tEnter Customer First Name: ")
             last_name = input("\tEnter Customer Last Name: ")
             phone_number = input("\tEnter Customer Phone Number: ")
+            email = input("\tEnter Email: ")
             if CustomerModel.check_phone_number_exists(phone_number):
-                print('Customer with this phone number already exists!')
-                main_menu()
+                if CustomerModel.check_email_exists(email):
+                    print('Customer with this phone number/email already exists!')
+                    main_menu()
             else:
-                CustomerModel.add_customer(first_name=first_name, last_name=last_name, phone_number=phone_number)
+                CustomerModel.add_customer(first_name=first_name, last_name=last_name, phone_number=phone_number, email=email)
 
         # choice 2 deletes a customer
         elif user_choice == '2':
@@ -50,8 +52,9 @@ def customer_menu():
                 first_name = input("\tEnter New Customer First Name: ")
                 last_name = input("\tEnter New Customer Last Name: ")
                 phone_number = input("\tEnter New Customer Phone Number: ")
+                email = input("\tEnter Email: ")
                 CustomerModel.update_customer_by_id(id=id, first_name=first_name, last_name=last_name,
-                                                    phone_number=phone_number)
+                                                    phone_number=phone_number, email=email)
                 print("Customer Details Updated Successfully!")
                 main_menu()
             else:

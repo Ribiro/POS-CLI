@@ -3,15 +3,16 @@ import os
 
 
 class CustomerModel:
-    def __init__(self, id, first_name, last_name, phone_number):
+    def __init__(self, id, first_name, last_name, phone_number, email):
         self.id = id
         self.first_name = first_name
         self.last_name = last_name
         self.phone_number = phone_number
+        self.email = email
 
     # add new customer details
     @classmethod  # binds this method to the class, and not the object of the class
-    def add_customer(cls, first_name, last_name, phone_number):
+    def add_customer(cls, first_name, last_name, phone_number, email):
         from Controllers.customerMenu import customer_menu
         f = open('Files/customers_file.json', 'r')
 
@@ -26,7 +27,8 @@ class CustomerModel:
             "id": customer_id,
             "first_name": first_name,
             "last_name": last_name,
-            "phone_number": phone_number
+            "phone_number": phone_number,
+            "email": email,
         }
 
         names.append(customer)
@@ -75,6 +77,20 @@ class CustomerModel:
                     customer = each
         return customer
 
+    # fetch customer using email
+    @classmethod
+    def fetch_customer_by_email(cls, email):
+        customer = []
+        file = open('Files/customers_file.json', 'r')
+        if os.stat('Files/customers_file.json').st_size == 0:
+            customer = []
+        else:
+            customers = json.load(file)
+            for each in customers:
+                if each.get("email") == email:
+                    customer = each
+        return customer
+
     # check whether phone number exists
     @classmethod
     def check_phone_number_exists(cls, phone_number):
@@ -86,6 +102,20 @@ class CustomerModel:
             customers = json.load(file)
             for each in customers:
                 if each.get("phone_number") == phone_number:
+                    exists_status = True
+        return exists_status
+
+    # check whether email exists
+    @classmethod
+    def check_email_exists(cls, email):
+        exists_status = False
+        file = open('Files/customers_file.json', 'r')
+        if os.stat('Files/customers_file.json').st_size == 0:
+            exists_status = False
+        else:
+            customers = json.load(file)
+            for each in customers:
+                if each.get("email") == email:
                     exists_status = True
         return exists_status
 
@@ -105,7 +135,7 @@ class CustomerModel:
 
     # update customer by id
     @classmethod
-    def update_customer_by_id(self, id, first_name, last_name, phone_number):
+    def update_customer_by_id(self, id, first_name, last_name, phone_number, email):
         f = open('Files/customers_file.json', 'r')
         customers = json.load(f)
 
@@ -115,7 +145,8 @@ class CustomerModel:
                     "id": id,
                     "first_name": first_name,
                     "last_name": last_name,
-                    "phone_number": phone_number
+                    "phone_number": phone_number,
+                    "email": email
                 })
 
         with open('Files/customers_file.json', 'w', encoding='utf-8') as json_file:
