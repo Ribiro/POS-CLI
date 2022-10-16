@@ -1,4 +1,5 @@
 from Models.customers import CustomerModel
+import json
 
 
 def customer_menu_queries():
@@ -32,7 +33,8 @@ def customer_menu():
                     print('Customer with this phone number/email already exists!')
                     main_menu()
             else:
-                CustomerModel.add_customer(first_name=first_name, last_name=last_name, phone_number=phone_number, email=email)
+                CustomerModel.add_customer(first_name=first_name, last_name=last_name, phone_number=phone_number,
+                                           email=email)
 
         # choice 2 deletes a customer
         elif user_choice == '2':
@@ -53,10 +55,20 @@ def customer_menu():
                 last_name = input("\tEnter New Customer Last Name: ")
                 phone_number = input("\tEnter New Customer Phone Number: ")
                 email = input("\tEnter Email: ")
-                CustomerModel.update_customer_by_id(id=id, first_name=first_name, last_name=last_name,
-                                                    phone_number=phone_number, email=email)
-                print("Customer Details Updated Successfully!")
-                main_menu()
+
+                f = open('Files/customers_file.json', 'r')
+                customers = json.load(f)
+
+                for customer in customers:
+                    if customer.get("id") != id:
+                        if customer.get("phone_number") != phone_number and customer.get("email") != email:
+                            CustomerModel.update_customer_by_id(id=id, first_name=first_name, last_name=last_name,
+                                                                phone_number=phone_number, email=email)
+                            print("Customer Details Updated Successfully!")
+                            # main_menu()
+                        else:
+                            print("Cant update customer. Email/Phone Number already exists!")
+                            main_menu()
             else:
                 print("Customer with this ID does not exist!")
                 main_menu()
