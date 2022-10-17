@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 2,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 3,
+        "product_name": "Book",
+        "quantity": 2,
+        "amount_spent": 50,
+        "customer_id": 1
+    },
+    {
+        "id": 4,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 5,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 6,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 7,
+        "product_name": "Book",
+        "quantity": 2,
+        "amount_spent": 50,
+        "customer_id": 3
+    },
+    {
+        "id": 8,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 3
+    }
+]
