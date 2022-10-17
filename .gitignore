@@ -3,3 +3,4 @@ tests.json
 __pychache__
 .idea
 __init__.py
+.env

@@ -1,7 +1,12 @@
 import smtplib
-sender_email = 'ribirodenis05@gmail.com'
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+sender_email = os.getenv("sender_email")
 receiver_email = 'ribiro05@gmail.com'
-password = 'hjutmbojageqodkg'
+password = os.getenv("password")
 
 subject = "Testing"
 text = "Testing sending email"
