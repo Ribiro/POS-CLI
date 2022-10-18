@@ -19,5 +19,19 @@
         "last_name": "test",
         "phone_number": "0987",
         "email": "test@gmail.com"
+    },
+    {
+        "id": 4,
+        "first_name": "Mary",
+        "last_name": "Jane",
+        "phone_number": "0741767345",
+        "email": "jane@gmail.com"
+    },
+    {
+        "id": 5,
+        "first_name": "Dr.",
+        "last_name": "Albert",
+        "phone_number": "0712536354",
+        "email": "albert@jengaschool.com"
     }
 ]

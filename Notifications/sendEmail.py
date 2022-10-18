@@ -1,21 +1,23 @@
-import smtplib
-from dotenv import load_dotenv
-import os
+def send_email(receiver_email, subject, text):
+    # imports
+    import smtplib
+    from dotenv import load_dotenv
+    import os
 
-load_dotenv()
+    load_dotenv()
 
-sender_email = os.getenv("sender_email")
-receiver_email = 'ribiro05@gmail.com'
-password = os.getenv("password")
+    sender_email = os.getenv("sender_email")
+    receiver_email = receiver_email
+    password = os.getenv("password")
 
-subject = "Testing"
-text = "Testing sending email"
+    subject = subject
+    text = text
 
-message = 'Subject: {}\n\n{}'.format(subject, text)
+    message = 'Subject: {}\n\n{}'.format(subject, text)
 
-server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP('smtp.gmail.com', 587)
 
-server.starttls()
-server.login(sender_email, password)
-print("login Success")
-server.sendmail(sender_email, receiver_email, message, subject)
+    server.starttls()
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receiver_email, message, subject)
+    print("Email Sent Successfully!")

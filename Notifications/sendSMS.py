@@ -1,11 +1,11 @@
-import africastalking
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-
 def send_sms(phone_number, message):
+    # imports
+    import africastalking
+    from dotenv import load_dotenv
+    import os
+
+    load_dotenv()
+
     # # Initialize SDK
     username = os.getenv("username")
     api_key = os.getenv("api_key")
@@ -22,4 +22,4 @@ def send_sms(phone_number, message):
 
     # Use the service synchronously
     response = sms.send(message, [number])
-    print(response)
+    print("SMS Sent Successfully!")

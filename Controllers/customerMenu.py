@@ -1,4 +1,5 @@
 from Models.customers import CustomerModel
+from Controllers.validators import email_validator, phone_number_validator
 import json
 
 
@@ -33,8 +34,19 @@ def customer_menu():
                     print('Customer with this phone number/email already exists!')
                     main_menu()
             else:
-                CustomerModel.add_customer(first_name=first_name, last_name=last_name, phone_number=phone_number,
-                                           email=email)
+                if phone_number_validator(phone_number):
+                    if email_validator(email):
+                        CustomerModel.add_customer(first_name=first_name, last_name=last_name,
+                                                   phone_number=phone_number,
+                                                   email=email)
+                    else:
+                        print("Invalid Email Format!")
+                        print("Please re-enter customer details in the correct format.")
+                        continue
+                else:
+                    print("Invalid Phone Number Format!")
+                    print("Please re-enter customer details in the correct format.")
+                    continue
 
         # choice 2 deletes a customer
         elif user_choice == '2':

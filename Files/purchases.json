@@ -54,5 +54,166 @@
         "quantity": 5,
         "amount_spent": 250,
         "customer_id": 3
+    },
+    {
+        "id": 9,
+        "product_name": "Omo",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 1
+    },
+    {
+        "id": 10,
+        "product_name": "Omo",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 1
+    },
+    {
+        "id": 11,
+        "product_name": "Omo",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 1
+    },
+    {
+        "id": 12,
+        "product_name": "Omo",
+        "quantity": 1,
+        "amount_spent": 100,
+        "customer_id": 1
+    },
+    {
+        "id": 13,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 14,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 15,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 16,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 17,
+        "product_name": "Book",
+        "quantity": 6,
+        "amount_spent": 150,
+        "customer_id": 1
+    },
+    {
+        "id": 18,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 19,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 20,
+        "product_name": "Book",
+        "quantity": 5,
+        "amount_spent": 125,
+        "customer_id": 1
+    },
+    {
+        "id": 21,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 22,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 23,
+        "product_name": "Book",
+        "quantity": 5,
+        "amount_spent": 125,
+        "customer_id": 1
+    },
+    {
+        "id": 24,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 25,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 26,
+        "product_name": "Omo",
+        "quantity": 5,
+        "amount_spent": 500,
+        "customer_id": 1
+    },
+    {
+        "id": 27,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 28,
+        "product_name": "Book",
+        "quantity": 10,
+        "amount_spent": 250,
+        "customer_id": 1
+    },
+    {
+        "id": 29,
+        "product_name": "Omo",
+        "quantity": 2,
+        "amount_spent": 200,
+        "customer_id": 5
+    },
+    {
+        "id": 30,
+        "product_name": "Kiwi",
+        "quantity": 5,
+        "amount_spent": 250,
+        "customer_id": 5
+    },
+    {
+        "id": 31,
+        "product_name": "Book",
+        "quantity": 10,
+        "amount_spent": 250,
+        "customer_id": 5
     }
 ]

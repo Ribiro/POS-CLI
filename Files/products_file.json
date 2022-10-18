@@ -2,19 +2,19 @@
     {
         "id": 1,
         "product_name": "Omo",
-        "quantity": 10,
+        "quantity": 88,
         "price": 100
     },
     {
         "id": 2,
         "product_name": "Kiwi",
-        "quantity": 0,
+        "quantity": 85,
         "price": 50
     },
     {
         "id": 3,
         "product_name": "Book",
-        "quantity": 46,
+        "quantity": 80,
         "price": 25
     }
 ]
